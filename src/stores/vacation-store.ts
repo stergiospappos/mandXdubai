@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 import { format } from 'date-fns';
 import { activities, bookings } from '@/data/vacation-data';
-import { VacationStore, CalendarEvent } from '@/types/vacation';
+import type { VacationStore } from '@/types/vacation';
 import { toast } from 'sonner';
 
-export const useVacationStore = create<VacationStore>((set, get) => ({
+export const useVacationStore = create<VacationStore>((set) => ({
   selectedDate: undefined,
   setSelectedDate: (date) => set({ selectedDate: date }),
   getActivitiesForDate: (date) => {
